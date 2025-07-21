@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules of Engagement: A Visual Guide to TAM Backup Pods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Narrative Plan: 1. Hook with the problem/solution. 2. Establish foundational principles. 3. Detail the pod structure and roles. 4. Explain the crucial proactive "Staying Familiar" rules. 5. Visualize the hand-off process for planned/unplanned absences. 6. Show the simple hand-back process. 7. Conclude with a clear timeline for implementation. -->
+    <!-- Visualization Plan: 1. Guiding Principles -> Goal: Inform -> Styled HTML Cards with Unicode Icons (Justification: Clear, no over-charting qualitative data. NO SVG). 2. Pod Structure -> Goal: Organize -> HTML/CSS Diagram (Justification: Shows hierarchy clearly. NO SVG/Mermaid). 3. Min. Viable Info -> Goal: Inform -> Donut Chart (Justification: Visually engaging representation of parts of a whole. Chart.js/Canvas. NO SVG). 4. Activation Process -> Goal: Organize Process -> HTML/CSS Flowcharts (Justification: Best for step-by-step processes. NO SVG/Mermaid). 5. Timeline -> Goal: Change over Time -> HTML/CSS Timeline (Justification: Intuitive for chronological events. NO SVG). -->
+    <!-- Chosen Color Palette: Brilliant Blues -->
+    <!-- Confirmation: NEITHER Mermaid JS NOR SVG were used in this file. All diagrams and charts are rendered using HTML/CSS with Tailwind or the Chart.js Canvas renderer. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 640px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flowchart-step {
+            border-left: 4px solid #0a9396;
+            transition: all 0.3s ease;
+        }
+        .flowchart-step:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 0px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #0a9396;
+            border: 4px solid #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#005f73]">Rules of Engagement for Backup TAM Pods</h1>
+            <p class="text-lg text-[#0a9396] mt-2">A Framework for Resilience, Shared Responsibility, and Seamless Coverage</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <section class="lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#005f73] mb-4 text-center">Our Guiding Principles</h2>
+                <p class="text-center text-gray-600 mb-6">These principles form the foundation of our pod system. They define our commitment to proactive collaboration and mutual success.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 text-center">
+                    <div class="bg-[#e9d8a6] bg-opacity-20 p-4 rounded-lg">
+                        <span class="text-4xl text-[#ee9b00]">🤝</span>
+                        <h3 class="font-semibold mt-2 text-[#ca6702]">Shared Responsibility</h3>
+                        <p class="text-sm text-gray-700 mt-1">"My backup's success is my success." We are collectively responsible for our team's outcomes.</p>
+                    </div>
+                    <div class="bg-[#94d2bd] bg-opacity-20 p-4 rounded-lg">
+                        <span class="text-4xl text-[#0a9396]">🚀</span>
+                        <h3 class="font-semibold mt-2 text-[#005f73]">Proactive, Not Reactive</h3>
+                        <p class="text-sm text-gray-700 mt-1">We prepare for absences before they happen, eliminating last-minute scrambles.</p>
+                    </div>
+                    <div class="bg-[#bb3e03] bg-opacity-10 p-4 rounded-lg">
+                         <span class="text-4xl text-[#bb3e03]">🔐</span>
+                        <h3 class="font-semibold mt-2 text-[#ae2012]">Trust & Empowerment</h3>
+                        <p class="text-sm text-gray-700 mt-1">Backups are empowered to act and make sound decisions, not just serve as placeholders.</p>
+                    </div>
+                    <div class="bg-gray-200 p-4 rounded-lg">
+                        <span class="text-4xl">🎯</span>
+                        <h3 class="font-semibold mt-2 text-gray-800">Coverage, Not Cloning</h3>
+                        <p class="text-sm text-gray-700 mt-1">The goal is to maintain momentum and support stakeholders, not perfectly replicate the primary.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#005f73] mb-4 text-center">Pod Structure & Roles</h2>
+                <p class="text-center text-gray-600 mb-8">A clear line of succession prevents confusion and ensures everyone understands their role. Roles are rotated periodically to spread knowledge and prevent burnout.</p>
+                <div class="space-y-4">
+                     <div class="flex items-center">
+                        <div class="bg-[#ae2012] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mr-4">PL</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-[#9b2226]">Pod Leader</h3>
+                            <p class="text-gray-600">Leads the pod, facilitates syncs, and acts as a key contact. Rotated annually.</p>
+                        </div>
+                    </div>
+                    <div class="pl-8 flex items-center">
+                         <div class="text-3xl mr-4 text-[#ca6702]">↳</div>
+                        <div class="bg-[#ca6702] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mr-4">PO</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-[#ca6702]">Primary Owner</h3>
+                            <p class="text-gray-600">Holds day-to-day responsibility for their assigned accounts.</p>
+                        </div>
+                    </div>
+                    <div class="pl-16 flex items-center">
+                        <div class="text-3xl mr-4 text-[#ee9b00]">↳</div>
+                        <div class="bg-[#ee9b00] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mr-4">PB</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-[#ee9b00]">Primary Backup</h3>
+                            <p class="text-gray-600">Has the deepest familiarity after the owner and is the first point of contact.</p>
+                        </div>
+                    </div>
+                    <div class="pl-24 flex items-center">
+                        <div class="text-3xl mr-4 text-[#0a9396]">↳</div>
+                        <div class="bg-[#0a9396] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mr-4">PS</div>
+                        <div>
+                            <h3 class="font-bold text-lg text-[#0a9396]">Pod Support</h3>
+                            <p class="text-gray-600">The rest of the pod serves as general support and can be consulted as needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-center">
+                 <h2 class="text-2xl font-bold text-[#005f73] mb-2 text-center">Minimum Viable Information</h2>
+                 <p class="text-center text-gray-600 mb-4">To ensure a smooth hand-off, every backup must have easy access to this core set of information, maintained by the Primary Owner.</p>
+                <div class="chart-container">
+                    <canvas id="infoChart"></canvas>
+                </div>
+            </section>
+
+            <section class="lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#005f73] mb-4 text-center">Activating a Backup: The Hand-Off Process</h2>
+                <p class="text-center text-gray-600 mb-8">Clear, simple procedures for both planned and unplanned absences are key to a seamless transition. Follow these steps to activate the pod.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-center text-[#ca6702] mb-4">🗓️ Planned Absence (PTO)</h3>
+                        <div class="space-y-4">
+                            <div class="flowchart-step p-4 rounded-md bg-gray-50">
+                                <p class="font-semibold text-[#005f73]">1. Inform Pod</p>
+                                <p class="text-sm text-gray-600">Send a Slack message to the pod channel with OOO dates and link to the Success Plan.</p>
+                            </div>
+                            <div class="flowchart-step p-4 rounded-md bg-gray-50">
+                                <p class="font-semibold text-[#005f73]">2. Brief (Optional)</p>
+                                <p class="text-sm text-gray-600">Schedule an optional call with the pod to discuss account details if needed.</p>
+                            </div>
+                            <div class="flowchart-step p-4 rounded-md bg-gray-50">
+                                <p class="font-semibold text-[#005f73]">3. Update Systems</p>
+                                <ul class="text-sm text-gray-600 list-disc list-inside mt-1">
+                                    <li>Update your calendar</li>
+                                    <li>Set Gmail OOO (include pod group email)</li>
+                                    <li>Set Slack OOO (name primary backups)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-center text-[#ae2012] mb-4">🤒 Unplanned Absence (Sick)</h3>
+                        <div class="space-y-4">
+                            <div class="flowchart-step p-4 rounded-md bg-gray-50">
+                                <p class="font-semibold text-[#005f73]">1. Manager Communicates</p>
+                                <p class="text-sm text-gray-600">Manager informs the Pod Leader of the unexpected absence.</p>
+                            </div>
+                            <div class="flowchart-step p-4 rounded-md bg-gray-50">
+                                <p class="font-semibold text-[#005f73]">2. Pod Leader Delegates</p>
+                                <p class="text-sm text-gray-600">The Pod Leader delegates urgent tasks like ticket reviews and customer calls.</p>
+                            </div>
+                             <div class="flowchart-step p-4 rounded-md bg-gray-50">
+                                <p class="font-semibold text-[#005f73]">3. Backup Informs Client</p>
+                                <p class="text-sm text-gray-600">The Primary Backup communicates the absence to the account's named contacts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#005f73] mb-6 text-center">Implementation Timeline & Next Steps</h2>
+                 <p class="text-center text-gray-600 mb-8">This is our roadmap for rolling out the pod system. The pilot program will run for four months to gather feedback and refine the process.</p>
+                <div class="relative pl-8 border-l-2 border-dashed border-[#94d2bd]">
+                    <div class="mb-8 timeline-item">
+                        <h3 class="font-bold text-[#005f73]">July 23: Team Review</h3>
+                        <p class="text-gray-600">The complete proposal is reviewed during the team call. Pods will meet in breakout rooms to select their Pod Leader.</p>
+                    </div>
+                    <div class="mb-8 timeline-item">
+                        <h3 class="font-bold text-[#005f73]">By Aug 4: Setup Complete</h3>
+                        <p class="text-gray-600">Team leads will submit requests for Google Groups and create the dedicated pod Slack channels.</p>
+                    </div>
+                     <div class="mb-8 timeline-item">
+                        <h3 class="font-bold text-[#ee9b00]">Aug 4: Pilot Program Begins</h3>
+                        <p class="text-gray-600">The TAM Pod system officially launches. The first monthly syncs should be scheduled for August.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="font-bold text-[#ae2012]">Dec 4: Pilot Program Concludes</h3>
+                        <p class="text-gray-600">The pilot ends. We will review the program's effectiveness and determine the path forward for permanent implementation.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        function wrapLabel(str, maxwidth) {
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 < maxwidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const infoCtx = document.getElementById('infoChart').getContext('2d');
+        new Chart(infoCtx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Gong \'Get Briefed\'', 
+                    'Key Contacts (Gainsight/SFDC)', 
+                    'Current Fires (Success Plan)', 
+                    'P0/P1 Jiras', 
+                    'Active Initiatives'
+                ],
+                datasets: [{
+                    label: 'Information Share',
+                    data: [20, 20, 20, 20, 20],
+                    backgroundColor: [
+                        '#0a9396',
+                        '#94d2bd',
+                        '#ee9b00',
+                        '#ca6702',
+                        '#bb3e03'
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 4,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 12
+                            },
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    </script>
+</body>
+</html>
